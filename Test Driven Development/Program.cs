@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //this line prints a message to the console
+            Console.WriteLine("This is a message!");
         }
 
     }
