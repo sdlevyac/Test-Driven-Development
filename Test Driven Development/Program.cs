@@ -66,5 +66,9 @@ namespace Test_Driven_Development
                 Console.WriteLine($"no product found with id {productID}");
             }
         }
+        public static void test()
+        {
+            Console.WriteLine("test");
+        }
     }
 }
