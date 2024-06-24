@@ -101,7 +101,7 @@ namespace Unit_Testing
         {
             using StringWriter sw = new StringWriter();
             Console.SetOut(sw);
-            Program.GetCustomerName(1);
+            Program.GetContactName(1);
             var result = sw.ToString().Trim();
             Assert.That(result == "M.A.");
         }
@@ -110,7 +110,7 @@ namespace Unit_Testing
         {
             using StringWriter sw = new StringWriter();
             Console.SetOut(sw);
-            Program.GetCustomerName(39);
+            Program.GetContactName(39);
             var result = sw.ToString().Trim();
             Assert.That(result == "P.C.");
         }
@@ -119,7 +119,7 @@ namespace Unit_Testing
         {
             using StringWriter sw = new StringWriter();
             Console.SetOut(sw);
-            Program.GetCustomerName(77);
+            Program.GetContactName(77);
             var result = sw.ToString().Trim();
             Assert.That(result == "L.N.");
         }
@@ -130,7 +130,7 @@ namespace Unit_Testing
         {
             using StringWriter sw = new StringWriter();
             Console.SetOut(sw);
-            Program.GetContactName(0);
+            Program.GetFullCustomerAddress(0);
             var result = sw.ToString().Trim();
             Assert.That(result == "Address for customer with ID 0 not found");
         }
@@ -139,7 +139,7 @@ namespace Unit_Testing
         {
             using StringWriter sw = new StringWriter();
             Console.SetOut(sw);
-            Program.GetCustomerName(1);
+            Program.GetFullCustomerAddress(1);
             var result = sw.ToString().Trim();
             Assert.That(result == "Obere Str. 57, Berlin, 12209, Germany");
         }
@@ -148,7 +148,7 @@ namespace Unit_Testing
         {
             using StringWriter sw = new StringWriter();
             Console.SetOut(sw);
-            Program.GetCustomerName(39);
+            Program.GetFullCustomerAddress(39);
             var result = sw.ToString().Trim();
             Assert.That(result == "Maubelstr. 90, Brandenburg, 14776, Germany");
         }
@@ -157,7 +157,7 @@ namespace Unit_Testing
         {
             using StringWriter sw = new StringWriter();
             Console.SetOut(sw);
-            Program.GetCustomerName(77);
+            Program.GetFullCustomerAddress(77);
             var result = sw.ToString().Trim();
             Assert.That(result == "89 Jefferson Way Suite 2, Portland, 97201, USA");
         }
