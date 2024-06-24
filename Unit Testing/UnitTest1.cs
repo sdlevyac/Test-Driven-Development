@@ -27,5 +27,23 @@ namespace Unit_Testing
             var result = sw.ToString().Trim();
             Assert.That(result == "no product found with id 0");
         }
+        [Test]
+        public void Test3()
+        {
+            using StringWriter sw = new StringWriter();
+            Console.SetOut(sw);
+            Program.GetSupplier(16);
+            var result = sw.ToString().Trim();
+            Assert.That(result == "Bigfoot Breweries");
+        }
+        [Test]
+        public void Test4()
+        {
+            using StringWriter sw = new StringWriter();
+            Console.SetOut(sw);
+            Program.GetSupplier(16);
+            var result = sw.ToString().Trim();
+            Assert.That(result == "no supplier found with id 0");
+        }
     }
 }
