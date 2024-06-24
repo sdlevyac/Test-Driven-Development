@@ -52,22 +52,18 @@ namespace Test_Driven_Development
         }
         public static void GetProduct(int productID)
         {
-            try
+            Console.WriteLine("getting product...")
+
+            using var connection = new MySqlConnection(connStr);
+            connection.Open();
+            using var command = new MySqlCommand("SELECT productName FROM products WHERE productID = @productID;", connection);
+            command.Parameters.AddWithValue("@productID", productID);
+            using var reader = command.ExecuteReader();
+            if (reader.Read())
             {
-                using var connection = new MySqlConnection(connStr);
-                connection.Open();
-                using var command = new MySqlCommand("SELECT productName FROM products WHERE productID = @productID;", connection);
-                command.Parameters.AddWithValue("@productID", productID);
-                using var reader = command.ExecuteReader();
-                if (reader.Read())
-                {
-                    Console.WriteLine(reader.GetString(0));
-                }
+                Console.WriteLine(reader.GetString(0));
             }
-            catch (Exception)
-            {
-                Console.WriteLine("");
-            }
+
 
         }
         public static void GetSupplier(int supplierID)
