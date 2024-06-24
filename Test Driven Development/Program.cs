@@ -52,7 +52,6 @@ namespace Test_Driven_Development
         }
         public static void GetProduct(int productID)
         {
-            Console.WriteLine("getting product...")
 
             using var connection = new MySqlConnection(connStr);
             connection.Open();
